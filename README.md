@@ -22,7 +22,7 @@ When first starting up the system of five containers, the Keycloak instance will
 Furthermore, keycloak usually requires SSL to be enabled (which is the default) but what hinders this overall setup to work because the Apache Proxy server acquires the traditional SSL/https port of 443 and therefore the port can't be used by keycloak. In this example, for simplification reasons, the keycloak needs to run on http only and the enforced SSL connection needs to be reconfigured. Let's start by doing this first:
 
 Log into the Keycloak container and use the keycloak admin cli tool to change the ssl property:
-* docker exec -it deephub-advanced-setup-keycloak-1 /bin/bash
+* docker exec -it deephub-advanced-setup_keycloak_1 /bin/bash
 * cd /opt/bitnami/keycloak/bin
 * kcadm.sh update realms/master -s sslRequired=NONE --server http://localhost:8080/ --realm master --user user --password bitnami
 * kcadm.sh update realms/omlox -s sslRequired=NONE --server http://localhost:8080/ --realm master --user user --password bitnami
